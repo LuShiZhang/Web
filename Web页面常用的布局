@@ -64,4 +64,8 @@ PC及移动端页面适配方法
 grid 布局是W3C提出的一个二维布局系统，通过 display: grid 来设置使用，对于以前一些复杂的布局能够得到更简单的解决。本篇文章通过几个布局来对对
 grid 布局进行一个简单的了解。目前，grid 仅仅只有 Edge使用前缀能够支持，为了更好地体验，可以使用 Chrome 浏览器，
 在 chrome://flags 开启 #enable-experimental-web-platform-features 选项。
+使用 grid-template-columns 属性创建一个 12 列的网格，每个列都是一个单位宽度（总宽度的 1/12 ）。（愚人码头注：其中， repeat(12, 1fr) 意思是 12 个重复的 1fr 值。 fr 是网格容器剩余空间的等分单位。）
 
+使用 grid-template-rows 属性创建 3 行，第一行高度是 50px ，第二行高度是 350px 和第三行高度是 50px。
+
+使用 grid-gap 属性在网格中的网格项之间添加一个间隙。
