@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: 50px 350px 50px;
+            grid-gap: 5px;
+        }
+
+        .container {
+            display: grid;
+            grid-gap: 5px;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: 50px 350px 50px;
+            grid-template-areas:
+                " h h h h h h h h h h h h "
+                " c c c c c c c c c c m m"
+                " f f f f f f f f f f f f ";
+        }
+
+        .header {
+            line-height: 50px;
+            background: rgb(240, 124, 130);
+            border-radius: 10px;
+            text-align: center;
+            grid-area: h;
+        }
+
+        .menu {
+            background: rgb(167, 168, 189);
+            border-radius: 10px;
+            line-height: 50px;
+            text-align: center;
+            grid-area: m;
+        }
+
+        .content {
+            background: rgb(32, 137, 77);
+            border-radius: 10px;
+            line-height: 350px;
+            text-align: center;
+            grid-area: c;
+        }
+
+        .footer {
+            background: rgb(233, 221, 182);
+            border-radius: 10px;
+            line-height: 50px;
+            text-align: center;
+            grid-area: f;
+        }
+
+        @media screen and (max-width: 640px) {
+            .container {
+                grid-template-areas:
+                    "m m m m m m h h h h h h"
+                    "c c c c c c c c c c c c"
+                    "f f f f f f f f f f f f";
+            }
+        }
+      
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">HEADER</div>
+        <div class="menu">MENU</div>
+        <div class="content"></div>
+        <div class="footer">FOOTER</div>
+    </div>
+</body>
+
+</html>
