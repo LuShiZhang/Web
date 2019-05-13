@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Vue 示例</title>
+        <script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+        <!-- 声明式渲染-->
+        <div id="app">
+           {{message}} 
+        </div>
+        <br>
+        <div id="app2">
+            {{message}}
+        </div>
+        <div id="app3">
+            <ul>
+                <li v-for="book in books">{{
+                    book.name
+                }}</li>
+            </ul>
+        </div>
+        <!--数据绑定-->
+        <div id="app4">
+            <input type="text" v-model="name" placeholder="你的名字" />
+           <h1>你好，{{name}}</h1>
+        </div>
+        <div id="app6">
+            {{date}}
+        </div>
+        <script type="text/javascript">
+            var app=new Vue({//实例化
+                // document.getElementById('app')
+                //javascript写法
+                el:'#app',//挂载
+               
+                data:{
+                    message:'Hello Vue'//数据
+                }
+                
+            })
+           
+            var app2=new Vue({
+                el:'#app2',
+                data:{
+                    message:'Zhangshilu'
+                }
+            })
+            new Vue({
+                el:'#app3',
+                data:{
+                    books:[
+                        {
+                        name:'vue'
+                    },
+                    {name:'Recat'},
+                    {name:'javascript'}
+                    ]
+                }
+            })
+            new Vue({
+                el:'#app4',//
+                data:{
+                    name:''
+                }
+            })
+            new Vue({
+                el:'#app5',
+                data:{
+                    a:2
+                }
+            })
+            console.log(app.a);
+            new Vue({
+                el:'#app6',
+                data:{
+                    date:new Date()
+                },
+                mounted:function(){
+                var_this=this;//声明一个变量指向vue实例this保证作用域一致
+                this.timer=setInterval(function(){
+                    _this.date=new Date();//修改数据    
+                    
+                },1000)
+                },
+                beforeDestroy:function(){
+                    if(this.timer)
+                    clearInterval(this.timer)//在Vue实例销毁前清除定时器
+                }
+            })
+        </script>
+        
+	</body>
+</html>
