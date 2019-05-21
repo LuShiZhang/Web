@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>let 声明变量</title>
+		<script type="text/javascript">
+			//let a = 10;let声明的变量只在它所在的代码块有效。
+			var b = 3;
+			var a = [];
+			for (let i = 0; i < 10; i++) {
+				a[i] = function() {
+					console.log(i);
+				};
+			}
+			a[6](); 
+			for(let i=0;i<3;i++){
+				let i="abc"; 
+				console.log(i);
+			}
+			let tmp;
+			tmp=3;
+			console.log(tmp);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
