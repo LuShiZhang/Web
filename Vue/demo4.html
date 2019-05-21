@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	</head>
+	<body>
+		<div id="app">
+			<p>{{fullname()}} {{time}}</p>
+		</div>
+		<script type="text/javascript">
+			var app=new Vue({
+				el:'#app',
+				data:{
+					firstname:'hello',
+					lastname:'vue',
+					
+					time:1
+				},
+				methods:{
+					fullname(){
+						console.log("计算了一次");
+						return this.firstname+""+this.lastname
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

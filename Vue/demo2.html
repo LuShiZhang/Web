@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	</head>
+	<body>
+		<div id="app">
+			<p>{{name}}</p>
+			<p v-text="name"></p>
+			<p v-html="name"></p>
+			<hr>
+			<p>{{info}} test</p>
+			<p v-text="name"></p>
+			<p v-html="name"></p>
+			<hr>
+			<p>{{info}} test</p>
+			<p v-text="info+'test'">test</p>
+			<p v-html="info +'test'">test</p>
+		</div>
+		<script type="text/javascript">
+			var app= new Vue({
+				el: '#app',
+				data: {
+					name: 'zhangshilu',
+					info: '<h1> vue</h1>'
+				}
+
+			})
+		</script>
+	</body>
+</html>

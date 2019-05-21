@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	</head>
+	<body>
+		<div id="app">
+			<ul>
+				<li v-for="(val, key,index) of list":key="index">
+					{{key}}-{{val}}-{{index}}
+				</li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			var app=new Vue({
+				el:'#app',
+				data:{
+					list:{
+						name:'zhangshilu',
+						age:23,
+						sex:'男'
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

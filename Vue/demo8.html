@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <style>
+        .red {
+            color: red;
+        }
+        .font-size{
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <p
+        :class="[red,fontSize]"
+        @click="handleClick"
+    >{{title}}</p>
+</div>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            title: "hello world",
+            red: "",
+            fontSize: "font-size"
+        },
+        methods: {
+            handleClick() {
+                console.log("执行前 red 数据",this.red);
+                this.red = this.red === "red" ? "" : "red";
+                console.log("执行后 red 数据",this.red);
+            }
+        }
+    })
+</script>
+</body>
+</html>

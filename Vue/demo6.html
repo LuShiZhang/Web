@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	</head>
+	<body>
+		<div id="app">
+			<p>{{fullname}} {{time}}</p>
+		</div>
+		<script type="text/javascript">
+			var app=new Vue({
+				el:'#app',
+				data:{
+					firstname:'hello',
+					lastname:'vue',
+					time:1,
+				},
+				computed:{
+					fullname:{
+					get(){
+						console.log("计算了一次");
+						return this.firstname+""+this.lastname;
+						
+					},
+					set (value)
+					{
+						console.log(value);
+						var result =value.split("");
+						this.firstname=result[0];
+						this.lastname=result[1];
+					}
+				},
+				}
+			})
+		</script>
+	</body>
+</html>

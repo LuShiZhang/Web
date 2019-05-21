@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+ <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	</head>
+	<body>
+		<div id="app">
+			<p 
+			 :style="styleObj"
+        @click="handleClick"
+			>{{title}}</p>
+		</div>
+		<script type="text/javascript">
+			var app = new Vue({
+				el: '#app',
+				data:{
+					title: 'hello vue',
+					styleObj: {
+						color: 'black'
+				}
+				
+				},
+				methods: {
+					handleClick() {
+						console.log("执行前 styleObj.color 数据", this.styleObj.color);
+						this.styleObj.color = this.styleObj.color === "black" ? "red" : "black";
+						console.log("执行后 styleObj.color 数据", this.styleObj.color);
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

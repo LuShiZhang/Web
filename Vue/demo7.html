@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<style type="text/css">
+			.red{
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<p :class="{red:active}"
+			@click="handleClick"
+			>{{title}}</p>
+		</div>
+		<script type="text/javascript">
+			var app=new Vue({
+				el:"#app",
+				data:{
+					title:"hello vue",
+					active:true,
+				},
+				methods:{
+					handleClick(){
+						console.log("active更改之前",this.active);
+						this.active=!this.active;
+						console.log("active更改之后",this.active);
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
